@@ -2,10 +2,12 @@
 
 namespace App\Entities;
 
+use PabauAppointments\Entity\BaseEntity;
+
 /**
  * Message Entity
  */
-class Patient extends User
+class Patient extends BaseEntity
 {
 
     /**
@@ -26,7 +28,7 @@ class Patient extends User
     /**
      * @var String
      */
-    protected string $contactInfo;
+    protected string $phoneNumber;
 
 
     /**
@@ -87,20 +89,20 @@ class Patient extends User
     }
 
     /**
-     * @return  String
+     * @return int
      */
-    public function getContactInfo(): string
+    public function getPhoneNumber(): int
     {
-        return $this->contactInfo;
+        return $this->phoneNumber;
     }
 
     /**
-     * @param string|null $contactInfo
+     * @param int|null $phoneNumber
      * @return Patient
      */
-    public function setContactInfo(?string $contactInfo): static
+    public function setPhoneNumber(?int $phoneNumber): static
     {
-        $this->contactInfo = $contactInfo;
+        $this->phoneNumber = $phoneNumber;
 
         return $this;
     }

@@ -15,11 +15,6 @@ class Appointment extends BaseEntity
     /**
      * @var Integer
      */
-    protected int $doctorId;
-
-    /**
-     * @var Integer
-     */
     protected int $patientId;
 
     /**
@@ -51,34 +46,12 @@ class Appointment extends BaseEntity
     /**
      * Constructor for Patient entity
      *
-     * @param int $doctorId The foreign key referencing the Doctor entity.
      * @param int $patientId The foreign key referencing the Patient entity.
      */
-    public function __construct(int $doctorId, int $patientId)
+    public function __construct(int $patientId)
     {
         parent::__construct();
-        $this->doctorId = $doctorId;
         $this->patientId = $patientId;
-    }
-
-    /**
-     * Get the doctorId
-     *
-     * @return int
-     */
-    public function getDoctorId(): int
-    {
-        return $this->doctorId;
-    }
-
-    /**
-     * Set the doctorId
-     *
-     * @param int $doctorId
-     */
-    public function setDoctorId(int $doctorId)
-    {
-        $this->doctorId = $doctorId;
     }
 
     /**

@@ -12,14 +12,12 @@ if ($conn->connect_error) {
 
 $sql = "CREATE TABLE Appointments (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-doctorId INT(6) UNSIGNED NOT NULL,
 patientId INT(6) UNSIGNED NOT NULL,
 startTime DATETIME NOT NULL,
 endTime DATETIME NOT NULL,
 status ENUM('Active', 'Inactive', 'Pending') NOT NULL,
 medicalCondition TEXT NOT NULL,
 service TEXT NOT NULL,
-FOREIGN KEY (doctorId) REFERENCES Doctor(id),
 FOREIGN KEY (patientId) REFERENCES Patients(id)
 )";
 
