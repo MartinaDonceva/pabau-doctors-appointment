@@ -10,18 +10,18 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "CREATE TABLE Patients (
+$sql = "CREATE TABLE Doctor (
 id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-userId INT(6) UNSIGNED,
 name VARCHAR(255) NOT NULL,
 surname VARCHAR(255) NOT NULL,
-socialSecurityNumber INT NOT NULL,
-contactInfo VARCHAR(255) NOT NULL,
-FOREIGN KEY (userId) REFERENCES Users(id)
+email VARCHAR(255) NOT NULL,
+password VARCHAR(255) NOT NULL,
+address VARCHAR(255) NOT NULL,
+contactInfo VARCHAR(255) NOT NULL
 )";
 
 if (mysqli_query($conn, $sql)) {
-    echo "Table Patients created successfully";
+    echo "Table Doctor created successfully";
 } else {
     echo "Error creating table: " . mysqli_error($conn);
 }

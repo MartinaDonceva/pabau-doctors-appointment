@@ -2,11 +2,27 @@
 
 namespace App\Entities;
 
+use PabauAppointments\Entity\BaseEntity;
+
 /**
  * Message Entity
  */
-class Doctor extends User
+class Doctor extends BaseEntity
 {
+    /**
+     * @var String
+     */
+    protected string $username;
+
+    /**
+     * @var String
+     */
+    protected string $email;
+
+    /**
+     * @var String
+     */
+    protected string $password;
 
     /**
      * @var String
@@ -29,6 +45,54 @@ class Doctor extends User
     protected string $contactInfo;
 
 
+    /**
+     * @param string|null $username
+     * @return Doctor
+     */
+    public function setUsername(?string $username): static
+    {
+        $this->username = $username;
+
+        return $this;
+    }
+
+    /**
+     * @return  String
+     */
+    public function getUsername(): string
+    {
+        return $this->username;
+    }
+
+    /**
+     * @param string|null $email
+     * @return Doctor
+     */
+    public function setEmail(?string $email): static
+    {
+        $this->email = $email;
+
+        return $this;
+    }
+
+    /**
+     * @return  String
+     */
+    public function getEmail(): string
+    {
+        return $this->email;
+    }
+
+    /**
+     * @param string|null $password
+     * @return Doctor
+     */
+    public function setPassword(?string $password): static
+    {
+        $this->password = $password;
+
+        return $this;
+    }
     /**
      * @return  String
      */
